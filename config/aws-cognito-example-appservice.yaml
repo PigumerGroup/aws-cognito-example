@@ -1,0 +1,8 @@
+"!include": aws-cognito-example.yaml
+outputDir: .generated/appservice
+additionalProperties:
+  artifactId: aws-cognito-example-appservice
+  interfaceOnly: true
+  parentGroupId: org.springframework.boot
+  parentArtifactId: spring-boot-starter-parent
+  parentVersion: 2.2.4.RELEASE

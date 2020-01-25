@@ -1,0 +1,28 @@
+version: "2.4"
+services:
+  openapi_generator1:
+    image: openapitools/openapi-generator-cli
+    volumes:
+      - .:/work
+    command: [
+      "batch",
+      "config/aws-cognito-example-html.yaml",
+      "config/aws-cognito-example-appservice.yaml",
+      "-v"
+    ]
+    working_dir: /work
+    environment:
+      JAVA_OPTS: "-Xmx1024M -DloggerPath=conf/log4j.properties"
+  openapi_generator2:
+    image: openapitools/openapi-generator-cli
+    volumes:
+      - .:/work
+    command: [
+      "batch",
+      "config/aws-cognito-example-controller.yaml",
+      "-v"
+    ]
+    working_dir: /work
+    environment:
+      JAVA_OPTS: "-Xmx1024M -DloggerPath=conf/log4j.properties -DsupportingFiles"
+

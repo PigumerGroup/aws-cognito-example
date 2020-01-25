@@ -1,0 +1,6 @@
+inputSpec: spec/openapi.yaml
+outputDir: doc
+generatorName: html2
+additionalProperties:
+  appName: "example"
+  appDescription: "Example"

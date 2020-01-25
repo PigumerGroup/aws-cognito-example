@@ -1,0 +1,47 @@
+openapi: 3.0.2
+info:
+  version: 0.1.0-SNAPSHOT
+  title: aws-cognito-example
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /index:
+    get:
+      description: index
+      parameters:
+        - name: code
+          in: query
+          schema:
+            type: string
+        - name: state
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: インデックスページを返す
+          content:
+            text/html:
+              schema:
+                type: string
+      operationId: Index
+      summary: Index
+      tags:
+        - index
+  /hello:
+    get:
+      description: hello
+      responses:
+        '200':
+          description: Hello World
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+      operationId: Hello
+      summary: Hello
+      tags:
+        - index

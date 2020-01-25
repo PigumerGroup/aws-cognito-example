@@ -1,0 +1,7 @@
+"!include": aws-cognito-example.yaml
+outputDir: app
+additionalProperties:
+  artifactId: aws-cognito-example-controller
+  parentGroupId: com.pigumer.aws-cognito-example
+  parentArtifactId: parent
+  parentVersion: 0.1.0-SNAPSHOT

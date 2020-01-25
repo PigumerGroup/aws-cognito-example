@@ -1,0 +1,12 @@
+inputSpec: spec/openapi.yaml
+generatorName: spring
+additionalProperties:
+  modelPackage: com.pigumer.controller.model
+  apiPackage: com.pigumer.controller.api
+  invokerPackage: com.pigumer.controller.api
+  groupId: com.pigumer.aws-cognito-example
+  artifactVersion: 0.1.0-SNAPSHOT
+  dateLibrary: java8
+  java8: true
+  configPackage: com.pigumer.controller.configuration
+  library: spring-boot
