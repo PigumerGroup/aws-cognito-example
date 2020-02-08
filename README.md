@@ -37,3 +37,17 @@ $ export OPENID_CLIENT_SECRET=<YOUR AWS Cognito Client Secret>
 $ export OPENID_REDIRECT_URI=http://localhost:8080/index
 $ mvn clean spring-boot:run
 ```
+
+## 5. MFAを有効にする。
+
+```
+$ export ACCESS_TOKEN=<ACCESS_TOKEN>
+$ aws cognito-idp associate-software-token --access-token ${ACCESS_TOKEN}
+$ aws cognito-idp verify-software-token --access-token ${ACCESS_TOKEN} --user-code <MFA Code>
+$ aws cognito-idp set-user-mfa-preference --access-token ${ACCESS_TOKEN} --software-token-mfa-settings "Enabled=true"
+```
+
+## 6. MFAを有効にするためには
+
+AWS Cognito Userpool の設定で、OAuth スコープに、aws.cognito.signin.user.admin を許可します。
+ 

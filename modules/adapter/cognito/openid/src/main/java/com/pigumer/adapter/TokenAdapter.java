@@ -69,6 +69,8 @@ public interface TokenAdapter {
                     ObjectMapper mapper = new ObjectMapper();
                     logger.info(mapper.writeValueAsString(tokenResponse));
 
+                    logger.info("AccessToken: " + tokenResponse.getAccessToken());
+
                     return tokenResponse.getIdToken();
                 }
                 return null;

@@ -62,11 +62,11 @@ public class IndexApiController implements TokenAdapter {
         logger.info("client_secret: " + clientSecret);
         logger.info("redirect_uri: " + redirectUri);
         try {
-            String path = "/oauth2/authorize";
+            String path = "/login";
             String query = "response_type=code&" +
                     "client_id=" + clientId + "&" +
                     "redirect_uri=" + redirectUri + "&" +
-                    "scope=email+openid";
+                    "scope=email+openid+aws.cognito.signin.user.admin";
 
             return new URI(protocol, null, host, port, path, query, null).toURL();
         } catch (MalformedURLException | URISyntaxException e) {
@@ -118,4 +118,5 @@ public class IndexApiController implements TokenAdapter {
         indexModel.put("loginUrl", getAuthorizeUrl().toExternalForm());
         return new ModelAndView("index", "index", indexModel);
     }
+
 }

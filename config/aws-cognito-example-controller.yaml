@@ -3,5 +3,5 @@ outputDir: app
 additionalProperties:
   artifactId: aws-cognito-example-controller
   parentGroupId: com.pigumer.aws-cognito-example
-  parentArtifactId: parent
+  parentArtifactId: aws-cognito-example-parent
   parentVersion: 0.1.0-SNAPSHOT
